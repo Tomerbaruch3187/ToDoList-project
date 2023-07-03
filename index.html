@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./main.js"></script>
+    <script defer src="./saveInLocalStorage.js"></script>
+    <script defer src="./loadFromLocalStorage.js"></script>
+    <!-- <script defer src="main2."></script> -->
+
+    <title>To do 📃</title>
+</head>
+
+<body>
+    <div class="yourList">הרשימה שלך:</div>
+
+    <div class="add-task-div">
+        <input onkeydown="writeMissionOnScreen(event)" autocomplete="off" onblur="setInputFocus()" id="inputUser"
+            type="textBox" placeholder="משימה חדשה">
+
+        <div onclick="writeMissionOnScreen(event, true)" id="add-task">הוסף</div>
+    </div>
+
+    <div id="error"></div>
+    <div id="addToPage"></div>
+
+    <button onclick="saveInLocalStorage()" class="task-completed">שמור משימות</button>
+    <br>
+    <br>
+    <button onclick="taskCompleted()" class="task-completed">מחק את המשימות</button>
+
+
+</body>
+
+</html>

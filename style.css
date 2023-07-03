@@ -1,0 +1,341 @@
+:root {
+    --bgc-primary: #B2A4FF;
+    --cl-text: #8D7B68;
+    --divs-text: #1f1b1bde;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    background-color: var(--bgc-primary);
+}
+
+#addToPage {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 20px;
+    gap: 10px;
+}
+
+#error {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 5px;
+    text-shadow: rgb(209, 209, 209) 1px 0 5px;
+}
+
+.yourList {
+    font-size: 1.3em;
+    font-family: Courier, monospace;
+    font-weight: bold;
+    margin: 5px 15px 0px 0px;
+}
+
+.check-list-item {
+    display: flex;
+    padding: 4px;
+    width: 240px;
+    font-weight: bold;
+    color: var(--divs-text);
+}
+
+.check-list-item button {
+    margin-left: 5px;
+}
+
+input {
+    width: 230px;
+    height: 35px;
+    font-weight: bold;
+    color: var(--cl-text);
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+/* taskCompleted */
+.task-completed {
+    align-items: center;
+    appearance: none;
+    margin-right: 10px;
+    background-color: #FCFCFD;
+    border-radius: 15px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 16px;
+}
+
+.task-completed:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.task-completed:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.task-completed:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+/* taskCompleted */
+.accomplished {
+    text-decoration: line-through #C32F12;
+    color: black;
+}
+
+
+/* End task BUTTON */
+.end-task {
+    cursor: pointer;
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+.end-task:hover {
+    transform: translateY(-1px);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.41);
+    transition: 0.2s;
+}
+
+/* Edit task BUTTON */
+
+.edit-task {
+    cursor: pointer;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.edit-task:hover {
+    transform: translateY(-1px);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.41);
+    transition: 0.2s;
+}
+
+
+/* edit-option */
+.blur-div {
+    position: absolute;
+    top: 0;
+    display: flex;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(1.5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-option {
+    top: 15vh;
+    position: absolute;
+    z-index: 10;
+    width: 350px;
+    height: 130px;
+    border-radius: 50px;
+    background-color: #36395aa2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-out;
+}
+
+.edit-option:hover {
+    transform: scale(1.1);
+}
+
+.edit-input {
+    border-radius: 10px;
+    width: 180px;
+}
+
+
+.new-edit-input-color::placeholder {
+    color: rgba(255, 15, 15, 0.788);
+    font-size: 0.8em;
+}
+
+/* SAVE BUTOON */
+.accept-edit {
+    align-items: center;
+    appearance: none;
+    margin-right: 10px;
+    background-color: #FCFCFD;
+    border-radius: 15px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #8a17f7;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 16px;
+}
+
+.accept-edit:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.accept-edit:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.accept-edit:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+/* EDIT BUTOON */
+.dont-save-edit-task {
+    align-items: center;
+    appearance: none;
+    margin-right: 10px;
+    background-color: #FCFCFD;
+    border-radius: 15px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #f00000;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 16px;
+}
+
+.dont-save-edit-task:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.dont-save-edit-task:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.dont-save-edit-task:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+/* edit-option */
+
+/* add Task with a BUTTON */
+
+
+#add-task {
+    align-items: center;
+    appearance: none;
+    margin-right: 10px;
+    background-color: #FCFCFD;
+    border-radius: 15px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 16px;
+}
+
+#add-task:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#add-task:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+#add-task:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.add-task-div {
+    display: flex;
+}
+
+#add-task {
+    margin: 13px 0px 0 0;
+
+}
